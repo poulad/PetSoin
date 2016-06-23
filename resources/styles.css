@@ -1,0 +1,24 @@
+body {
+   width: 70%;
+   margin: 0 auto;
+   text-align: center;
+}
+
+table {
+   background-color: ivory;
+   text-align: center;
+   border-bottom: 3px solid gray;
+}
+
+td, th {
+   margin: 0;
+   padding: .7em;
+   border-right: 3px solid green;
+   border-left: 3px solid green;
+   color: #333;
+   text-align: center;
+}
+
+th {
+   border-bottom: 3px solid magenta;
+} 
