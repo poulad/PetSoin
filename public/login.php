@@ -1,9 +1,5 @@
 <?php
-   function redirect_to($location) {
-      header("Location: " . $location);
-      exit;
-   }
-
+   require_once("../include/functions.php");
 
    if(isset($_POST['submit'])) {
       $username = $_POST["username"];
@@ -25,10 +21,10 @@
             if ($username == $aRow['user'] && $passphrase == $aRow['pass']) {
                switch($aRow['type']) {
                   case "A":
-                     redirect_to("index.php");
+                     redirect_to("admin.php");
                      break;
                   case "D":
-                     redirect_to("http://www.example.com/");
+                     redirect_to("../index.php");
                      break;
                   case "O":
                      redirect_to("petowner.php");
@@ -37,8 +33,6 @@
                      redirect_to("clinic.php");
                      break;
                   default:
-                     echo $aRow["user"]." : ".$aRow["pass"]." : ".$aRow["type"];
-                     echo "<br>";
                      break;
                }
             }
@@ -47,21 +41,26 @@
          echo 'ERROR: ' . $e->getMessage();
       }
    }
-
 ?>
 
-<!DOCTYPE html>
-<html>
-   <head>
-      <title>Login</title>
-   </head>
-   
-   <body>
-      <form action="login.php" method="post">
-         Username: <input type="text" name="username" required > <br>
-         Passphrase: <input type="password" name="passphrase" required> <br>
-         <input type="submit" name="submit" value="Login"> <br>
-         <input type="reset" name="reset" value="Clear">
-      </form>
-   </body>
-</html>
+<?php
+   include("../include/layout/header.php");
+?>
+
+<div id="main">
+   <div id="navigation">
+      &nbsp;
+   </div>
+   <div id="page">
+         <form action="login.php" method="post">
+            Username: <input type="text" name="username" required > <br>
+            Passphrase: <input type="password" name="passphrase" required> <br>
+            <input type="submit" name="submit" value="Login"> <br>
+            <input type="reset" name="reset" value="Clear">
+         </form>
+   </div>
+</div>
+
+<?php
+   include("../include/layout/footer.php");
+?>

@@ -1,20 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
+<?php
+   include("../include/layout/header.php");
+?>
 
-<html lang="en">
-	<head>
-		<title>PetSoin Project - Administration Page</title>
-		<link href="css/public.css" media="all" rel="stylesheet" type="text/css" />
-	</head>
-	<body>
-    <div id="header">
-      <h1>PetSoin Project</h1>
-    </div>
-    <div id="main">
-      <div id="navigation">
-        &nbsp;
-      </div>
-      <div id="page">
+<div id="main">
+   <div id="navigation">
+      &nbsp;
+   </div>
+   <div id="page">
         
 <?php
       $conn = mysqli_connect(
@@ -34,20 +26,18 @@
       }
       
       $row = mysqli_fetch_assoc($result);
-      
-      
-      
       mysqli_free_result($result);
 ?>
-        <h2>Welcome <?php echo $row["fname"]; ?></h2>
-         <p>Administration Menu</p>
-        <ul>
-          <li><a href="manage_users.php">Manage Users</a></li>
-          <li><a href="logout.php">Logout</a></li>
-        </ul>
-      </div>
-    </div>
-    <div id="footer">Copyright 2016, Poulad Ashraf Pour</div>
 
-	</body>
-</html>
+      <h2>Welcome <?php echo $row["fname"]; ?></h2>
+      <p>Administration Menu</p>
+      <ul>
+         <li><a href="manage_users.php">Manage Users</a></li>
+         <li><a href="logout.php">Logout</a></li>
+      </ul>
+   </div>
+</div>
+
+<?php
+   include("../include/layout/footer.php");
+?>
