@@ -45,7 +45,7 @@ a:hover { color: #1A446C; }
 }
 #navigation a { color: #D4E6F4; text-decoration: none; }
 #navigation a:hover { color: #FFFFFF; }
-ul.subjects { 
+#navigation > ul > li { 
 	margin: 1em 0; padding-left: 0; list-style: none;
 }
 ul.pages { padding-left: 2em; list-style: square; }

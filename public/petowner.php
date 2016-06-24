@@ -11,7 +11,7 @@
    $query = "SELECT * from owner WHERE owner_id = " . $owner_id;
    $result = mysqli_query($conn, $query);
    confirm_query($result);
-   $owner_name = mysqli_fetch_assoc($result)["name"];
+   $owner_name = mysqli_fetch_assoc($result)["fname"];
    mysqli_free_result($result);
 ?>
 
@@ -24,7 +24,7 @@
             confirm_query($result);
 
             while($pet = mysqli_fetch_assoc($result)) {
-               echo "<li class='subjects'>" . $pet["name"] . "</li>";
+               echo "<li>" . $pet["name"] . "</li>";
             }
             $result
          ?>
