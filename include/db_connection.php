@@ -1,4 +1,4 @@
-<?
+<?php
    define("DB_SERVER", "us-cdbr-azure-west-c.cloudapp.net");
    define("DB_USER", "b19257a1ad0368");
    define("DB_PASS", "08ac5ec15b6233e");
@@ -9,3 +9,4 @@
    if (mysqli_connect_errno()) {
          die("Database connection failed: " . mysqli_connect_error() . mysqli_connect_errno() );
    }
+?>
