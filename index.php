@@ -45,7 +45,7 @@ try {
    }
 ?>
       </table>
-      <h3><a href="login.php">Login</a></h3>
-      <h4><a href="dbmanager.php">db</a></h4>
+      <h3><a href="public/login.php">Login</a></h3>
+      <h4><a href="public/dbmanager.php">db</a></h4>
    </body>
 </html>
