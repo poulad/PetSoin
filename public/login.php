@@ -1,6 +1,6 @@
 <?php
    require_once("../include/functions.php");
-
+   
    if(isset($_POST['submit'])) {
       $username = $_POST["username"];
       $passphrase = $_POST["passphrase"];
