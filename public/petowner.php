@@ -7,26 +7,23 @@
 ?>
 
 <?php
-   $owner_id = "1";
-   $query = "SELECT * from owner WHERE owner_id = " . $owner_id;
-   $result = mysqli_query($conn, $query);
-   confirm_query($result);
-   $owner_name = mysqli_fetch_assoc($result)["fname"];
-   mysqli_free_result($result);
+   // get owner's id from super global GET
+   if(isset($_GET["id"])) {
+      $owner_id = $_GET["id"];
+   } else {
+      $owner_id = "1";
+   }
+   $owner_name = find_owner_by_id($owner_id)["fname"];
 ?>
 
 <div id="main">
    <div id="navigation">
       <ul>
          <?php
-            $query = "SELECT * FROM pet WHERE owner_id = '" . $owner_id . "'";
-            $result = mysqli_query($conn, $query);
-            confirm_query($result);
-
-            while($pet = mysqli_fetch_assoc($result)) {
+            $pets_set = find_all_pets($owner_id);
+            while($pet = mysqli_fetch_assoc($pets_set)) {
                echo "<li>" . $pet["name"] . " (" . $pet["breed"] . ")" . "</li>";
             }
-            $result
          ?>
       </ul>
    </div>
