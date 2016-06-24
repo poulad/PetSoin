@@ -26,5 +26,26 @@
       return $result;
    }
    
-   
+   function create_petowner_navigation() {
+      global $owner_id;
+      global $pet_id;
+      
+      $output = "";
+      
+      $output .= "<ul>";
+      $pets_set = find_all_pets($owner_id);
+      while($pet = mysqli_fetch_assoc($pets_set)) {
+         $output .= "<li ";
+         if ($pet["pet_id"] == $pet_id) {
+            $output .= " class='selected' ";
+         }
+         $output .= ">";
+         $output .= "<a href=\"petowner.php?o=" . urlencode($owner_id) . "&p=" . urlencode($pet['pet_id']) . "\">";
+         $output .= $pet['name'] . " (" . $pet['breed'] . ")";
+         $output .= "</a></li>";
+      }
+      $output .= "</ul>";
+      
+      return $output;
+   }
 ?>

@@ -25,21 +25,7 @@
 
 <div id="main">
    <div id="navigation">
-      <ul>
-         <?php
-            $pets_set = find_all_pets($owner_id);
-            while($pet = mysqli_fetch_assoc($pets_set)) {
-               echo "<li ";
-               if ($pet["pet_id"] == $pet_id) {
-                  echo " class='selected' ";
-               }
-               echo ">";
-               echo "<a href=\"petowner.php?o=" . $owner_id . "&p=" . $pet['pet_id'] . "\">";
-               echo $pet['name'] . " (" . $pet['breed'] . ")";
-               echo "</a></li>";
-            }
-         ?>
-      </ul>
+      <?php echo create_petowner_navigation(); ?>
    </div>
    <div id="page">
       <h3>Welcome, <?php echo $owner_name; ?></h3>
