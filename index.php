@@ -19,7 +19,7 @@
             <th>Birthdate</th>
             <th>Weight</th>
          </tr>
-<?
+<?php
 try {
       $oConn = new PDO(
       "mysql:host=us-cdbr-azure-west-c.cloudapp.net;dbname=petsoin", 
@@ -45,5 +45,6 @@ try {
    }
 ?>
       </table>
+      <h3><a href="login.php">Login</a></h3>
    </body>
 </html>
