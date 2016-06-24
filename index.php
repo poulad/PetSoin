@@ -3,7 +3,7 @@
 <html>
    <head>
    <title>PetSoin</title>
-   <link rel="stylesheet" href="resources/styles.css">
+		<link href="public/css/styles.css" media="all" rel="stylesheet" type="text/css" />
    <style>
 
    </style>
