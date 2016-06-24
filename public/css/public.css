@@ -52,7 +52,7 @@ a:hover { color: #1A446C; }
 	margin: 1em 0; padding-left: 0; list-style: none;
 }
 ul.pages { padding-left: 2em; list-style: square; }
-.selected { font-weight: bold; }
+#navigation .selected { font-weight: bold; }
 
 /* Page Content */
 #page { 
