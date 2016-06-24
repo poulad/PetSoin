@@ -3,19 +3,18 @@
 
 <html lang="en">
 	<head>
-		<title>untitled</title>
+		<title>PetSoin Project - Administration Page</title>
 		<link href="css/public.css" media="all" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
     <div id="header">
-      <h1>Widget Corp</h1>
+      <h1>PetSoin Project</h1>
     </div>
     <div id="main">
       <div id="navigation">
         &nbsp;
       </div>
       <div id="page">
-        <h2>Admin Menu</h2>
         
 <?php
       $conn = mysqli_connect(
@@ -40,15 +39,15 @@
       
       mysqli_free_result($result);
 ?>
-        <p>Welcome <?php echo $row["fname"]; ?></p>
+        <h2>Welcome <?php echo $row["fname"]; ?></h2>
+         <p>Administration Menu</p>
         <ul>
-          <li><a href="manage_content.php">Manage Website Content</a></li>
-          <li><a href="manage_admins.php">Manage Admin Users</a></li>
+          <li><a href="manage_users.php">Manage Users</a></li>
           <li><a href="logout.php">Logout</a></li>
         </ul>
       </div>
     </div>
-    <div id="footer">Copyright 20xx, Widget Corp</div>
+    <div id="footer">Copyright 2016, Poulad Ashraf Pour</div>
 
 	</body>
 </html>

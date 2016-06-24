@@ -2,7 +2,7 @@
 
 <html>
    <head>
-   <title>PetSoin</title>
+   <title>PetSoin Project</title>
 		<link href="public/css/styles.css" media="all" rel="stylesheet" type="text/css" />
    <style>
 
