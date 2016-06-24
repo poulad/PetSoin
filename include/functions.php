@@ -10,12 +10,12 @@
       }
    }
    
-   function find_owner_by_id($id) {
+   function find_owner_by_id($owner_id) {
       global $conn;
-      $query = "SELECT * from owner WHERE owner_id = '{$id}' ";
+      $query = "SELECT * FROM owner WHERE owner_id = '{$owner_id}'";
       $result = mysqli_query($conn, $query);
       confirm_query($result);
-      return mysqli_free_result($result);
+      return mysqli_fetch_assoc($result);
    }
    
    function find_all_pets($owner_id) {

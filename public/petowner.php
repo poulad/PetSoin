@@ -13,6 +13,7 @@
    } else {
       $owner_id = "1";
    }
+   
    $owner_name = find_owner_by_id($owner_id)["fname"];
 ?>
 
