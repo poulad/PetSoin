@@ -23,7 +23,7 @@
          <?php
             $pets_set = find_all_pets($owner_id);
             while($pet = mysqli_fetch_assoc($pets_set)) {
-               echo "<li>" . $pet["name"] . " (" . $pet["breed"] . ")" . "</li>";
+               echo "<li><a href=\"petowner.php?id={$owner_id},pet={$pet['pet_id']}\"> {$pet['name'} ({$pet['breed']}) </a></li>";
             }
          ?>
       </ul>
