@@ -24,7 +24,7 @@
             confirm_query($result);
 
             while($pet = mysqli_fetch_assoc($result)) {
-               echo "<li>" . $pet["name"] . "</li>";
+               echo "<li>" . $pet["name"] . " (" . $pet["breed"] . ")" . "</li>";
             }
             $result
          ?>
