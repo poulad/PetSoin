@@ -1,6 +1,6 @@
 <?php
    require_once("include/session.php");
-   include("../include/layout/header.php");
+   include("include/layout/header.php");
 ?>
 
 <div id="main">
