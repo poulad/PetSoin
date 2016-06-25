@@ -28,7 +28,11 @@
          }
       } else {
          echo "LOGIN FAILED";
-      } 
+         
+      }
+   } else {
+      $username = null;
+      $passphrase = null;
    }
 ?>
 
@@ -41,11 +45,10 @@
       &nbsp;
    </div>
    <div id="page">
-         <form action="login.php" method="post">
-            Username: <input type="text" name="username" required > <br>
-            Passphrase: <input type="password" name="passphrase" required> <br>
+         <form class='login' action="login.php" method="post">
+            Username: <input type="text" name="username" required value='<?php echo $username ?>'> <br>
+            Passphrase: <input type="password" name="passphrase" required value='<?php echo $passphrase ?>' > <br>
             <input type="submit" name="submit" value="Login"> <br>
-            <input type="reset" name="reset" value="Clear">
          </form>
    </div>
 </div>
