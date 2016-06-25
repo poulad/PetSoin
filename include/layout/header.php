@@ -13,5 +13,7 @@
 <?php
    if(is_logged_in()) {
       echo "<div class='logout'>Hi, " . $_SESSION["usrname"] . "<a href='logout.php'><img src='image/logout.png' /> </a></div>";
-   };
+   } else {
+      echo "<div class='logout'><a href='login.php'>Login to the system</a></div>";
+   }
 ?>
