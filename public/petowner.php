@@ -25,11 +25,22 @@
 
 <div id="main">
    <div id="navigation">
-      <?php echo create_petowner_navigation(); ?>
+      <?php echo create_petowner_navigation($owner_id, $pet_id); ?>
    </div>
    <div id="page">
       <h3>Welcome, <?php echo $owner_name; ?></h3>
-
+      <?php
+         if($pet_id) {
+            echo create_pet_info_form($pet_id);
+            echo "<br>";
+            // echo create_pet_appointment_form($owner_id, $pet_id);
+            echo "<br>";
+            // echo create_pet_vaccination_table($owner_id, $pet_id);
+            echo "<br>";
+            // echo create_pet_treatment_table($owner_id, $pet_id);
+            echo "<br>";
+         }
+      ?>
    </div>
 </div>
 
