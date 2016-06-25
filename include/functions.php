@@ -10,6 +10,19 @@
       }
    }
    
+   function find_user($username) {
+      global $conn;
+      $username = mysqli_real_escape_string($conn, $username);
+      $query = "SELECT * FROM login WHERE user = '{$username}'";
+      $result = mysqli_query($conn, $query);
+      confirm_query($result);
+      if(mysqli_num_rows($result) > 0) {
+         return mysqli_fetch_assoc($result);
+      } else {
+         return null;
+      }
+   }
+   
    function find_owner_by_id($owner_id) {
       global $conn;
       $owner_id = mysqli_real_escape_string($conn, $owner_id);
@@ -111,6 +124,21 @@
       $output .= "<input type='submit' name='submit' value='Make appointment'></form>";
 
       return $output;
+   }
+   
+   function verify_user($username, $passphrase) {
+      $user = find_user($username);
+      if($user) {
+         if (sha1($passphrase) === $user["pass"]) {
+            return true;
+         }
+         else {
+            return false;
+         }
+      } else {
+         // user does not exist
+         return null;
+      }
    }
    
 ?>
