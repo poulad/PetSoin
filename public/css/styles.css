@@ -22,3 +22,14 @@ td, th {
 th {
    border-bottom: 3px solid magenta;
 } 
+
+.index-page {
+   width: 980px;
+   margin: 20px auto;
+}
+
+.index-page p {
+   font-family: 'Arial Narrow';
+   font-size: 20pt;
+   padding: .5em;
+}
