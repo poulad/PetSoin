@@ -16,6 +16,7 @@
                redirect_to("../index.php");
                break;
             case "O":
+               $_SESSION['owner'] = find_owner_by_username($username);
                redirect_to("petowner.php");
                break;
             case "C":

@@ -32,6 +32,15 @@
       return mysqli_fetch_assoc($result);
    }
    
+   function find_owner_by_username($username) {
+         global $conn;
+         $username = mysqli_real_escape_string($conn, $username);
+         $query = "select owner_id, fname, lname from login left join owner on login.user = owner.username where login.type = 'O' and login.user = '{$username}'";
+         $result = mysqli_query($conn, $query);
+         confirm_query($result);
+         return mysqli_fetch_assoc($result);
+   }
+   
    function find_doctor_by_id($doctor_id) {
       global $conn;
       $doctor_id = mysqli_real_escape_string($conn, $doctor_id);
@@ -61,7 +70,7 @@
             $output .= " class='selected' ";
          }
          $output .= ">";
-         $output .= "<a href=\"petowner.php?o=" . urlencode($owner_id) . "&p=" . urlencode($pet['pet_id']) . "\">";
+         $output .= "<a href=\"petowner.php?p=" . urlencode($pet['pet_id']) . "\">";
          $output .= $pet['name'] . " (" . $pet['breed'] . ")";
          $output .= "</a></li>";
       }
@@ -125,6 +134,34 @@
 
       return $output;
    }
+   
+   
+   function create_pet_vaccination_table($pet_id) {
+      global $conn;
+      $output = "";
+      $pet_id = mysqli_real_escape_string($conn, $pet_id);
+      $query = "SELECT vaccine_id, vaccine_type, datetime, clinic.name " .
+            "FROM vaccine LEFT JOIN clinic ON(vaccine.clinic_id = clinic.clinic_id) " . 
+            "WHERE pet_id = '{$pet_id}' ORDER BY datetime";
+
+      $result = mysqli_query($conn, $query);
+      confirm_query($result);
+      
+      $output .= "<table class='vaccination'><tr><th>Vaccine ID</th><th>Vaccine Type</th><th>Date & Time</th><th>Clinic</th></tr>";
+
+      while ($vaccine = mysqli_fetch_assoc($result)) {
+         $output .= "<tr>";
+         $output .= "<td>" . $vaccine['vaccine_id'] . "</td>";
+         $output .= "<td>" . $vaccine['vaccine_type'] . "</td>";
+         $output .= "<td>" . $vaccine['datetime'] . "</td>";
+         $output .= "<td>" . $vaccine['name'] . "</td>";
+         $output .= "</tr>";
+      }
+
+      $output .= "</table>";
+      return $output;
+   }
+   
    
    function verify_login($username, $passphrase) {
       $user = find_user($username);
