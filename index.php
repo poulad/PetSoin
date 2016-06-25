@@ -1,5 +1,6 @@
 <?php
    require_once("include/session.php");
+   $_SESSION['index_dir'] = "http://petsoin.azurewebsites.net/";
    include("include/layout/header.php");
 ?>
 

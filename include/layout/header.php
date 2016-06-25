@@ -12,8 +12,8 @@
    </div>
 <?php
    if(is_logged_in()) {
-      echo "<div class='logout'>Hi, " . $_SESSION["usrname"] . "<a href='logout.php'><img src='image/logout.png' /> </a></div>";
+      echo "<div class='logout'>Hi, " . $_SESSION["usrname"] . "<a href='" . $_SESSION['index_dir'] . "public/logout.php'><img src='image/logout.png' /> </a></div>";
    } else {
-      echo "<div class='logout'><a href='login.php'>Login to the system</a></div>";
+      echo "<div class='logout'><a href='" . $_SESSION['index_dir'] . "public/login.php'>Login to the system</a></div>";
    }
 ?>
