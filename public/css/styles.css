@@ -24,12 +24,12 @@ th {
 } 
 
 .index-page {
-   width: 980px;
    margin: 20px auto;
 }
 
 .index-page p {
    font-family: 'Arial Narrow';
+   line-height: 1.6em;
    font-size: 20pt;
    padding: .5em;
 }
