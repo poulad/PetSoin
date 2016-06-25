@@ -10,9 +10,8 @@
    <div id="header">
       <h1>PetSoin Project</h1>
    </div>
-   <?php 
-      global $username;
-      if (isset($username)) {
-         echo "<div class='logout'>Hi, " . $username . "<a><img src="image/logout.png" /></a></div>";
-      }
-   ?>
+<?php
+   if(is_logged_in()) {
+      echo "<div class='logout'>Hi, " . $_SESSION["usrname"] . "<a href='logout.php'><img src='image/logout.png' /> </a></div>";
+   };
+?>

@@ -77,12 +77,14 @@ div.logout {
    width: 10%;
    height: 60px;
    top: 0;
-   right: 20px;
+   right: 7%;
    color: #4b4b4b;
    background: azure;
    border-radius: 0 0 2em 2em;
    text-align: center;
    vertical-align: middle;
+   font-weight: bolder;
+   padding: .1em;
 }
 
 div.logout a {
@@ -91,6 +93,9 @@ div.logout a {
 }
 
 div.logout a img {
+   float: right;
+   text-align: center;
+   vertical-align: middle;
    width: 30px;
    height: 30px;
 }
