@@ -126,10 +126,12 @@
       return $output;
    }
    
-   function verify_user($username, $passphrase) {
+   function verify_login($username, $passphrase) {
       $user = find_user($username);
       if($user) {
          if (sha1($passphrase) === $user["pass"]) {
+            $_SESSION["usrname"] = $user["user"];
+            $_SESSION["usertype"] = $user["type"];
             return true;
          }
          else {

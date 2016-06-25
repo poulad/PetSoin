@@ -1,6 +1,12 @@
 <?php
+   require_once("../include/session.php");
    require_once("../include/db_connection.php");
    require_once("../include/functions.php");
+   
+   if(!is_logged_in()) {
+      redirect_to("login.php");
+   }
+   
 ?>
 <?php
    include("../include/layout/header.php");

@@ -64,7 +64,7 @@ ul.pages { padding-left: 2em; list-style: square; }
 #page h3 { color: #8D0D19; }
 
 /* Login Form */
-form .login input {
+form.login input {
    margin: 10px;
    padding: 12em;
    border: 2px solid green;

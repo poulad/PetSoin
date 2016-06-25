@@ -1,4 +1,5 @@
 <?php
+   require_once("../include/session.php");
    require_once("../include/db_connection.php");
    require_once("../include/functions.php");
    
@@ -6,11 +7,8 @@
       $username = $_POST["username"];
       $passphrase = $_POST["passphrase"];
       
-      if(verify_user($username, $passphrase)) {
-      
-         $user = find_user($username, $passphrase);
-         
-         switch ($user['type']) {
+      if(verify_login($username, $passphrase)) {
+         switch ($_SESSION['usertype']) {
             case "A":
                redirect_to("admin.php");
                break;
