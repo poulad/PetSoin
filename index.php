@@ -4,7 +4,9 @@
 ?>
 
 <div id="main">
-    
+   <link href="public/css/styles.css" media="all" rel="stylesheet" type="text/css" />
+   <link href="public/css/public.css" media="all" rel="stylesheet" type="text/css" />
+
    <div id="page">
       <div class="index">
          <img src="public/image/logo.png">
