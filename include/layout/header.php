@@ -2,11 +2,17 @@
    "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
-	<head>
-		<title>PetSoin Project</title>
-		<link href="css/public.css" media="all" rel="stylesheet" type="text/css" />
-	</head>
-	<body>
-    <div id="header">
+   <head>
+      <title>PetSoin Project</title>
+      <link href="css/public.css" media="all" rel="stylesheet" type="text/css" />
+   </head>
+   <body>
+   <div id="header">
       <h1>PetSoin Project</h1>
-    </div>
+   </div>
+   <?php 
+      global $username;
+      if (isset($username)) {
+         echo "<div class='logout'>Hi, " . $username . "<a><img src="image/logout.png" /></a></div>";
+      }
+   ?>
