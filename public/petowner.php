@@ -31,10 +31,13 @@
       <h3>Welcome, <?php echo $owner_name; ?></h3>
       <?php
          if($pet_id) {
+            echo "<h4>Pet Information:</h4>";
             echo create_pet_info_form($pet_id);
             echo "<br>";
-            // echo create_pet_appointment_form($owner_id, $pet_id);
+            echo "<h4>Appointment:</h4>";
+            echo create_pet_appointment_table($pet_id);
             echo "<br>";
+            echo "<h4>Vaccination:</h4>";            
             // echo create_pet_vaccination_table($owner_id, $pet_id);
             echo "<br>";
             // echo create_pet_treatment_table($owner_id, $pet_id);
